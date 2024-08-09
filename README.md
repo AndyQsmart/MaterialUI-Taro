@@ -13,7 +13,8 @@ import "./common_component/material_ui"
 In this case,I place "material_ui" in folder "common_component".You can move the "material_ui" to anywhere you want.
 
 # Example
-You can run the example project.It is an example that show some usage of compoents.
+You can run the example project.It is an example that show some usage of components.
+
 <img src="https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image1.jpg" width="340px" />
 <img src="https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image2.jpg" width="340px" />
 
