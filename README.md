@@ -14,8 +14,8 @@ In this case,I place "material_ui" in folder "common_component".You can move the
 
 # Example
 You can run the example project.It is an example that show some usage of compoents.
-![image](https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image1.jpg)
-![image](https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image2.jpg)
+<img src="https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image1.jpg" width="340px" />
+<img src="https://github.com/AndyQsmart/MaterialUI-Taro/blob/main/readme_image/image2.jpg" width="340px" />
 
 # Components (until now)
 ```
