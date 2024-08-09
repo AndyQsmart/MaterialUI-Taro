@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 22 44 44">
+    <circle
+        stroke="#1976d2"
+        stroke-dasharray="80, 200"
+        stroke-dashoffset="0"
+        cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"
+    >
+        <animate
+            dur="1.4s"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            values="1,200;100,200;100,200"
+            keyTimes="0;0.5;1"
+            begin="0s"
+            fill="freeze"
+            repeatCount="indefinite"
+        />
+        <animate
+            dur="1.4s"
+            attributeName="stroke-dashoffset"
+            attributeType="XML"
+            values="0;-15;-125"
+            keyTimes="0;0.5;1"
+            begin="0s"
+            fill="freeze"
+            repeatCount="indefinite"
+        />
+    </circle>
+</svg>

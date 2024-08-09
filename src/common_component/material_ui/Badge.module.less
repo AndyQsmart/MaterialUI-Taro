@@ -1,0 +1,58 @@
+@import './styles/index.less';
+
+@RADIUS: 24rpx;
+
+.root {
+    position: relative;
+    display: inline-flex;
+    // For correct alignment with the text.
+    vertical-align: middle;
+}
+
+.anchorOriginTopRightRectangle {
+    top: 0;
+    right: 0;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0%;
+}
+
+.badge {
+    height: @RADIUS * 2;
+    display: flex;
+    padding: 0rpx 12rpx;
+    z-index: 1; // Render the badge on top of potential ripples.
+    position: absolute;
+    flex-wrap: wrap;
+    font-size: @RADIUS;
+    min-width: @RADIUS*2;
+    box-sizing: border-box;
+    transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    align-items: center;
+    font-family: @fontFamily;
+    font-weight: @fontWeightLight;
+    align-content: center;
+    // border-radius: 50%;
+    border-radius: @RADIUS;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.color-default {
+    background-color: @commonWhite;
+    color: @lightTextPrimary;
+}
+
+.color-primary {
+    background-Color: @primaryMain;
+    color: @commonWhite;
+};
+
+.color-secondary {
+    background-color: @secondaryMain;
+    color: @commonWhite;
+}
+
+.color-error {
+    background-color: @errorMain;
+    color: @commonWhite;
+};

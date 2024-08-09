@@ -1,0 +1,94 @@
+@import './styles/index.less';
+
+.root {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 auto;
+    color: @lightActionActive;
+    padding: 24rpx;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+.color_primary.checked {
+    color: @primaryMain;
+}
+
+.color_primary.disabled {
+    color: @lightActionDisabled;
+}
+
+.color_secondary.checked {
+    color: @secondaryMain;
+}
+
+.color_secondary.disabled {
+    color: @lightActionDisabled;
+}
+
+.label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.svg_unchecked(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgb(@{the_red},@{the_green},@{the_blue})" viewBox="0 0 24 24" ><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg>');
+}
+
+.svg_checked(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgb(@{the_red},@{the_green},@{the_blue})" viewBox="0 0 24 24" ><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>');
+}
+
+.svg_icon {
+    // fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.svg_icon.disabled {
+    .svg_unchecked(@grey400);
+}
+
+.svg_icon.disabled.checked {
+    .svg_checked(@grey400);
+}
+
+.svg_color_default {
+    .svg_unchecked(@grey600);
+}
+
+.svg_color_default.checked {
+    .svg_checked(@grey600);
+}
+
+.svg_color_primary {
+    .svg_unchecked(@grey600);
+}
+
+.svg_color_primary.checked {
+    .svg_checked(@primaryMain);
+}
+
+.svg_color_secondary {
+    .svg_unchecked(@grey600);
+}
+
+.svg_color_secondary.checked {
+    .svg_checked(@secondaryMain);
+}

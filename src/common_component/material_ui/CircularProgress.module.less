@@ -1,0 +1,30 @@
+@import './styles/index.less';
+
+.root {
+    display: inline-block;
+    animation: MuiCircularProgress-keyframes-circular-rotate 1.4s linear infinite;
+}
+
+@-webkit-keyframes MuiCircularProgress-keyframes-circular-rotate {
+    0% {
+        transform-origin: 50% 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.svg_image(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 22 44 44"><circle stroke="rgb(@{the_red},@{the_green},@{the_blue})" stroke-dasharray="80, 200" stroke-dashoffset="0" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"><animate dur="1.4s" attributeName="stroke-dasharray" attributeType="XML" values="1,200;100,200;100,200" keyTimes="0;0.5;1" begin="0s" fill="freeze" repeatCount="indefinite"/><animate dur="1.4s" attributeName="stroke-dashoffset" attributeType="XML" values="0;-15;-125" keyTimes="0;0.5;1" begin="0s" fill="freeze" repeatCount="indefinite"/></circle></svg>')
+}
+
+.svg_color_primary {
+    .svg_image(@primaryMain);
+}
+
+.svg_color_secondary {
+    .svg_image(@secondaryMain);
+}

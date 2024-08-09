@@ -1,0 +1,110 @@
+@import './styles/index.less';
+
+.root {
+    position: relative;
+    transition: background-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    background-color: rgba(0, 0, 0, 0.09);
+    border-top-left-radius: @borderRadius;
+    border-top-right-radius: @borderRadius;
+}
+
+.root.focused {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+.root.disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.color_secondary.underline:after {
+    border-bottom-color: @secondaryMain;
+}
+
+.underline:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 4rpx solid @primaryMain;
+    pointer-events: none;
+}
+
+.underline.focused:after {
+    transform: scaleX(1);
+}
+
+.underline.error:after {
+    transform: scaleX(1);
+    border-bottom-color: @errorMain;
+}
+
+.underline:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 2rpx solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+}
+
+.underline.disabled:before {
+    border-bottom-style: dotted;
+}
+
+.adornedStart {
+    padding-left: 24rpx;
+}
+
+.adornedEnd {
+    padding-right: 24rpx;
+}
+
+.root.multiline {
+    padding: 54rpx 24rpx 20rpx;
+}
+
+.root.multiline.marginDense {
+    padding-top: 46rpx;
+    padding-bottom: 12rpx;
+}
+
+.input {
+    padding: 54rpx 24rpx 20rpx;
+}
+
+//   .MuiFilledInput-input:-webkit-autofill {
+//     border-top-left-radius: inherit;
+//     border-top-right-radius: inherit;
+//   }
+
+.inputMarginDense {
+    padding-top: 46rpx;
+    padding-bottom: 12rpx;
+}
+
+.inputHiddenLabel {
+    padding-top: 36rpx;
+    padding-bottom: 39rpx;
+}
+
+.inputHiddenLabel.inputMarginDense {
+    padding-top: 20rpx;
+    padding-bottom: 22rpx;
+}
+
+.inputMultiline {
+    padding: 0;
+}
+
+.inputAdornedStart {
+    padding-left: 0;
+}
+
+.inputAdornedEnd {
+    padding-right: 0;
+}

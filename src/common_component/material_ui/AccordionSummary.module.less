@@ -1,0 +1,53 @@
+@import './styles/index.less';
+
+.root {
+    display: flex;
+    padding: 0 @unit * 2;
+    min-height: 96rpx;
+    transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.root.expanded {
+    min-height: 128rpx;
+}
+
+// .root.focused {
+//     background-color: rgba(0, 0, 0, 0.12);
+// }
+
+.root.disabled {
+    opacity: 0.38;
+}
+
+.content {
+    margin: 24rpx 0;
+    display: flex;
+    flex-grow: 1;
+    transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.content.expanded {
+    margin: 40rpx 0;
+}
+
+.iconButton {
+    margin-right: -24rpx;
+    flex: 0 0 auto;
+    color: @lightActionActive;
+    padding: 24rpx;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+.expandIcon {
+    transform: rotate(0deg);
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.expandIcon.expanded {
+    transform: rotate(180deg);
+}
+  

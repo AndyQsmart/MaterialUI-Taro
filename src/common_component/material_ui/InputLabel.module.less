@@ -1,0 +1,63 @@
+@import './styles/index.less';
+
+.root {
+    display: block;
+    transform-origin: top left;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.formControl {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(0, 48rpx) scale(1);
+}
+
+.marginDense {
+    transform: translate(0, 42rpx) scale(1);
+}
+
+.shrink {
+    transform: translate(0, 3rpx) scale(0.75);
+    transform-origin: top left;
+}
+
+.animated {
+    transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+
+.filled {
+    z-index: 1;
+    transform: translate(24rpx, 40rpx) scale(1);
+    pointer-events: none;
+}
+
+.filled.marginDense {
+    transform: translate(24rpx, 34rpx) scale(1);
+}
+
+.filled.shrink {
+    transform: translate(24rpx, 20rpx) scale(0.75);
+}
+
+.filled.shrink.marginDense {
+    transform: translate(24rpx, 14rpx) scale(0.75);
+}
+
+.outlined {
+    z-index: 1;
+    transform: translate(28rpx, 40rpx) scale(1);
+    pointer-events: none;
+}
+
+.outlined.marginDense {
+    transform: translate(28rpx, 24rpx) scale(1);
+}
+
+.outlined.shrink {
+    transform: translate(28rpx, -12rpx) scale(0.75);
+}

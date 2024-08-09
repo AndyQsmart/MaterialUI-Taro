@@ -1,0 +1,74 @@
+@import './styles/index.less';
+
+.root {
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%; // 尝试修复
+    height: 100%;
+    outline: 0;
+    pointer-events: none;
+}
+
+.scrollPaper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollBody {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.scrollBody:after {
+  width: 0;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.paper {
+    margin: 64rpx;
+    position: relative;
+    overflow-y: auto;
+    pointer-events: auto;
+}
+
+.paperScrollPaper {
+    display: flex;
+    max-height: calc(100% - 128rpx);
+    flex-direction: column;
+}
+
+.paperScrollBody {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.paperWidthFalse {
+    max-width: calc(100% - 128rpx);
+}
+
+.paperFullWidth {
+    width: calc(100% - 128rpx);
+}
+
+.paperFullScreen {
+    width: 100%;
+    height: 100%;
+    margin: 0!important;
+    max-width: 100%;
+    max-height: none;
+    border-radius: 0;
+}
+
+.paperFullScreen.paperScrollBody {
+    margin: 0;
+    max-width: 100%;
+}

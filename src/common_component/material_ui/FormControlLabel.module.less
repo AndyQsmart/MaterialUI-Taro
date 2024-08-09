@@ -1,0 +1,33 @@
+@import './styles/index.less';
+
+.root {
+    display: inline-flex;
+    align-items: center;
+    margin-left: -22rpx;
+    margin-right: 32rpx;
+    vertical-align: middle;
+}
+
+.root.disabled {
+}
+
+.label_placement_start {
+    margin-left: 32rpx;
+    margin-right: -22rpx;
+    flex-direction: row-reverse;
+}
+
+.label_placement_top {
+    margin-left: 32rpx;
+    flex-direction: column-reverse;
+}
+
+.label_placement_bottom {
+    margin-left: 32rpx;
+    flex-direction: column;
+}
+
+.label.disabled {
+    color: @lightTextDisabled;
+}
+  

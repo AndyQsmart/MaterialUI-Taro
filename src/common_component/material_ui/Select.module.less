@@ -1,0 +1,171 @@
+@import './styles/index.less';
+
+.root {
+    position: relative;
+    color: @lightTextPrimary;
+    font-size: 32rpx;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.root.disabled {
+    color: @lightTextDisabled;
+}
+
+.select_root {
+    position: relative;
+    user-select: none;
+    min-width: 32rpx;
+}
+
+.select_root_focus {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.underline {
+    border-radius: 0;
+    padding: 12rpx 0 14rpx;
+    padding-right: @unit*3;
+}
+
+.color_secondary.underline:after {
+    border-bottom-color: @secondaryMain;
+}
+
+.underline:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 4rpx solid @primaryMain;
+    pointer-events: none;
+}
+
+.underline_focus:after {
+    transform: scaleX(1);
+}
+
+.underline.error:after {
+    transform: scaleX(1);
+    border-bottom-color: @errorMain;
+}
+
+.underline:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 2rpx solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+}
+
+.underline.disabled:before {
+    border-bottom-style: dotted;
+}
+
+.outlined {
+    border-radius: 8rpx;
+    padding: 37rpx 28rpx;
+    padding-right: @unit*4;
+}
+
+.outlined:after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 16rpx;
+    content: "";
+    overflow: hidden;
+    position: absolute;
+    border-style: solid;
+    border-width: 2rpx;
+    border-radius: inherit;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+.outlined_focus:after {
+    border-color: @primaryMain;
+    border-width: 2px;
+}
+
+.filled {
+    border-top-left-radius: 8rpx;
+    border-top-right-radius: 8rpx;
+    padding-right: @unit*4;
+    background-color: rgba(0, 0, 0, 0.09);
+    padding: 54rpx 24rpx 20rpx;
+    padding-right: @unit*4;
+    padding-top: 36rpx; // 无label的情况
+    padding-bottom: 38rpx; // 无label的情况
+}
+
+.filled:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 4rpx solid @primaryMain;
+    pointer-events: none;
+}
+
+.filled_focus:after {
+    transform: scaleX(1);
+}
+
+.filled.error:after {
+    transform: scaleX(1);
+    border-bottom-color: @errorMain;
+}
+
+.filled:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 2rpx solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+}
+
+.filled.disabled:before {
+    border-bottom-style: dotted;
+}
+
+.svg_icon_base(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    @the_alpha: alpha(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgba(@{the_red},@{the_green},@{the_blue},@{the_alpha})" viewBox="0 0 24 24" ><path d="M7 10l5 5 5-5z"></path></svg>');
+}
+
+.icon {
+    width: 48rpx;
+    height: 48rpx;
+    .svg_icon_base(rgba(0, 0, 0, 0.54));
+    top: calc(50% - 24rpx);
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.icon_outlined {
+    right: 14rpx;
+}
+
+.icon_filled {
+    right: 14rpx;
+}

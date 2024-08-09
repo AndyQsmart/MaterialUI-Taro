@@ -1,0 +1,59 @@
+@import './styles/index.less';
+
+.root {
+    .body1();
+    color: @lightTextPrimary;
+    line-height: 1.4375em; // 23px
+    box-sizing: border-box; // Prevent padding issue with fullWidth.
+    position: relative;
+    // cursor: text;
+    display: inline-flex;
+    align-items: center;
+}
+
+.root.disabled {
+    color: @lightTextDisabled;
+    cursor: default;
+}
+
+.root.multiline {
+    padding: 8rpx 0 10rpx;
+}
+
+.root.multiline.small {
+    padding-top: 2rpx;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentColor;
+    padding: 8rpx 0 10rpx;
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em; // Reset 23pxthe native input line-height
+    margin: 0; // Reset for Safari
+    // WebkitTapHighlightColor: 'transparent',
+    display: block;
+    // Make the flex item shrink with Firefox
+    min-width: 0;
+    width: 100%; // Fix IE11 width issue
+    // animationName: 'mui-auto-fill-cancel',
+    // animationDuration: '10ms',
+}
+
+.input.small {
+    padding-top: 2rpx;
+}
+
+.input.multiline {
+    // height: auto;
+    resize: none;
+    padding: 0;
+    padding-top: 0;
+}

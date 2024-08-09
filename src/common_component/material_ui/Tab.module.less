@@ -1,0 +1,81 @@
+@import './styles/index.less';
+
+.root {
+    max-width: 528rpx;
+    min-width: 144rpx;
+    position: relative;
+    min-height: 96rpx;
+    flex-shrink: 0;
+    padding: 12rpx 24rpx;
+    overflow: hidden;
+    white-space: normal;
+    text-align: center;
+    .button();
+}
+
+.labelIcon {
+    min-height: 144rpx;
+    padding-top: 18rpx;
+}
+
+.labelIcon .wrapper > view:first-child {
+    margin-bottom: 12rpx;
+}
+
+.textColor_inherit {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.textColor_inherit.selected {
+    opacity: 1;
+}
+
+.textColor_inherit.disabled {
+    opacity: 0.5;
+}
+
+.textColor_primary {
+    color: @lightTextSecondary;
+}
+
+.textColor_primary.selected {
+    color: @primaryMain;
+}
+
+.textColor_primary.disabled {
+    color: @lightTextDisabled;
+}
+
+.textColor_secondary {
+    color: @lightTextSecondary;
+}
+
+.textColor_secondary.selected {
+    color: @secondaryMain;
+}
+
+.textColor_secondary.disabled {
+    color: @lightTextDisabled;
+}
+
+.fullWidth {
+    flex-grow: 1;
+    max-width: none;
+    flex-basis: 0;
+    flex-shrink: 1;
+}
+
+.wrapped {
+    font-size: 24rpx;
+    line-height: 1.5;
+}
+
+.wrapper {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: inherit;
+}

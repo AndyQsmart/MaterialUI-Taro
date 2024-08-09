@@ -1,0 +1,17 @@
+@import './styles/index.less';
+
+.root {
+    display: flex;
+    padding: @unit;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+// .spacing > :not(:first-child) {
+//     margin-left: @unit;
+// }
+
+.spacing > view:not(:first-child) {
+    margin-left: @unit;
+}
+  

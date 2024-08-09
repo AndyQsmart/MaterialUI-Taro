@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'FontAwesome';
+    /* 自行安装第三方字体图标库 */
+    // src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    // src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+    // src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 根据第三方字体图标库编写 */
+/* 举例：fa 就是 prefixClass 的值，下面的的图标 css class 命名都要用 fa- 开头  */
+.fa {
+    display: inline-block;
+    /* 以下的 font 与上面 @font-face 的 font-family 要一致*/
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-angle-right:before {
+    content: "\f105";
+}
+
+.fa-angle-left:before {
+    content: "\f104";
+}
+
+.fa-arrow-left:before {
+    content: "\f060";
+}
+
+.fa-arrow-right:before {
+    content: "\f061";
+}
+
+.fa-arrow-up:before {
+    content: "\f062";
+}
+
+.fa-arrow-down:before {
+    content: "\f063";
+}
+
+.fa-book:before {
+    content: "\f02d";
+}
+
+.fa-chevron-left:before {
+    content: "\f053";
+}
+
+.fa-chevron-right:before {
+    content: "\f054";
+}
+
+.fa-chevron-up:before {
+    content: "\f077";
+}
+
+.fa-chevron-down:before {
+    content: "\f078";
+}
+
+.fa-lock:before {
+    content: "\f023";
+}
+
+.fa-clock-o:before {
+    content: "\f017";
+}
+
+.fa-cog:before {
+    content: "\f013";
+}
+
+.fa-commenting:before {
+    content: "\f27a";
+}
+
+.fa-comment:before {
+    content: "\f075";
+}
+
+.fa-comments:before {
+    content: "\f086";
+}
+
+.fa-comments-o:before {
+    content: "\f0e6";
+}
+
+.fa-download:before {
+    content: "\f019";
+}
+
+.fa-file:before {
+    content: "\f15b";
+}
+
+.fa-file-text:before {
+    content: "\f15c";
+}
+
+.fa-file-text-o:before {
+    content: "\f0f6";
+}
+
+.fa-file-video-o:before {
+    content: "\f1c8";
+}
+
+.fa-html5:before {
+    content: "\f13b";
+}
+
+.fa-magnet:before {
+    content: "\f076";
+}
+
+.fa-newspaper-o:before {
+    content: "\f1ea";
+}
+
+.fa-sticky-note-o:before {
+    content: "\f24a";
+}
+
+.fa-exchange:before {
+    content: "\f0ec";
+}
+
+.fa-jpy:before {
+    content: "\f157";
+}
+
+.fa-pencil:before {
+    content: "\f040";
+}
+
+.fa-pencil-square:before {
+    content: "\f14b";
+  }
+
+.fa-pencil-square-o:before {
+    content: "\f044";
+}
+
+.fa-question-circle:before {
+    content: "\f059";
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+}
+
+.fa-star:before {
+    content: "\f005";
+}
+
+.fa-star-o:before {
+    content: "\f006";
+}
+
+.fa-times:before {
+    content: "\f00d";
+}
+
+.fa-times-circle-o:before {
+    content: "\f05c";
+}
+
+.fa-users:before {
+    content: "\f0c0";
+}
+
+.fa-user-circle-o:before {
+    content: "\f2be";
+}
+
+.fa-dot-circle-o:before {
+    content: "\f192";
+}
+
+.fa-hand-pointer-o:before {
+    content: "\f25a",
+}
+
+.fa-volume-control-phone:before {
+    content: "\f2a0";
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
+
+.fa-check:before {
+    content: "\f00c";
+}
+
+.fa-check-circle:before {
+    content: "\f058";
+}
+
+.fa-thumbs-up:before {
+    content: "\f164";
+}
+
+.fa-mail-forward:before,
+.fa-share:before {
+  content: "\f064";
+}
+
+.fa-share-alt:before {
+    content: "\f1e0";
+}
+
+.fa-search:before {
+    content: "\f002";
+}
+
+.fa-trash:before {
+    content: "\f1f8";
+}
+
+.fa-trash-o:before {
+    content: "\f014";
+}
+
+.fa-th-large:before {
+    content: "\f009";
+}
+
+.fa-info:before {
+    content: "\f129";
+}
+
+.fa-qrcode:before {
+    content: "\f029";
+}
+
+.fa-wechat:before,
+.fa-weixin:before {
+  content: "\f1d7";
+}
+
+.fa-caret-down:before {
+    content: "\f0d7";
+}
+
+.fa-info-circle:before {
+    content: "\f05a";
+}
+
+.fa-plus:before {
+    content: "\f067";
+}
+
+.fa-cloud-download:before {
+    content: "\f0ed";
+}
+
+.fa-font:before {
+    content: "\f031";
+}
+
+.fa-bold:before {
+    content: "\f032";
+}
+
+.fa-italic:before {
+    content: "\f033";
+}
+
+.fa-underline:before {
+    content: "\f0cd";
+}
+
+.fa-user:before {
+    content: "\f007";
+}
+
+.fa-list-alt:before {
+    content: "\f022";
+}
+
+.fa-map-marker:before {
+    content: "\f041";
+}
+
+.fa-university:before {
+    content: "\f19c";
+}
+
+.fa-picture-o:before {
+    content: "\f03e";
+}
+
+.fa-filter:before {
+    content: "\f0b0";
+}
+
+.fa-tag:before {
+    content: "\f02b";
+}
+
+.fa-bars:before {
+    content: "\f0c9";
+}

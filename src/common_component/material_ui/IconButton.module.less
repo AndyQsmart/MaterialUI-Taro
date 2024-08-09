@@ -1,0 +1,59 @@
+@import './styles/index.less';
+
+.root {
+    position: relative;
+    flex: 0 0 auto;
+    color: @lightActionActive;
+    padding: 24rpx;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+.root.disabled {
+    color: @lightActionDisabled;
+    background-color: transparent;
+}
+
+.edge_start {
+    margin-left: -24rpx;
+}
+
+.size_small.edge_start {
+    margin-left: -6rpx;
+}
+
+.edge_end {
+    margin-right: -24rpx;
+}
+
+.size_small.edge_end {
+    margin-right: -6rpx;
+}
+
+.color_inherit {
+    color: inherit;
+}
+
+.color_primary {
+    color: @primaryMain;
+}
+
+.color_secondary {
+    color: @secondaryMain;
+}
+
+.size_small {
+    padding: 6rpx;
+    font-size: 1.125rem;
+}
+
+.label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+  

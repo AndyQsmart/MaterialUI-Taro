@@ -1,0 +1,69 @@
+@import './styles/index.less';
+
+.root {
+    position: relative;
+    border-radius: @borderRadius;
+}
+
+.notchedOutline {
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+.root.focused .notchedOutline {
+    border-color: @primaryMain;
+    border-width: 4rpx;
+}
+
+.root.error .notchedOutline {
+    border-color: @errorMain;
+}
+
+.root.disabled .notchedOutline {
+    border-color: @lightActionDisabled;
+}
+
+.color_secondary.focused .notchedOutline {
+    border-color: @secondaryMain;
+}
+
+.adorned_start {
+    padding-left: 28rpx;
+}
+
+.adorned_end {
+    padding-right: 28rpx;
+}
+
+.root.multiline {
+    padding: 37rpx 28rpx;
+}
+
+.root.multiline.margin_dense {
+    padding-top: 21rpx;
+    padding-bottom: 21rpx;
+}
+
+.input {
+    padding: 37rpx 28rpx;
+}
+
+//   .MuiOutlinedInput-input:-webkit-autofill {
+//     border-radius: inherit;
+//   }
+
+.inputMarginDense {
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+.inputMultiline {
+    padding: 0;
+}
+
+.inputAdornedStart {
+    padding-left: 0;
+}
+
+.inputAdornedEnd {
+    padding-right: 0;
+}

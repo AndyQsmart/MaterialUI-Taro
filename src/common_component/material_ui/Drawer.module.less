@@ -1,0 +1,63 @@
+@import './styles/index.less';
+
+.docked {
+    flex: 0 0 auto;
+}
+
+.paper {
+    top: 0;
+    flex: 1 0 auto;
+    height: 100%;
+    display: flex;
+    outline: 0;
+    z-index: @drawer;
+    position: fixed;
+    overflow-y: auto;
+    flex-direction: column;
+    // -webkit-overflow-scrolling: touch;
+}
+
+.paperAnchor_left {
+    left: 0;
+    right: auto;
+}
+
+.paperAnchor_right {
+    left: auto;
+    right: 0;
+}
+
+.paperAnchor_top {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: auto;
+    max-height: 100%;
+}
+
+.paperAnchor_bottom {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    max-height: 100%;
+}
+
+.paperAnchorDocked_left {
+    border-right: 2rpx solid @lightTextDivider;
+}
+
+.paperAnchorDocked_top {
+    border-bottom: 2rpx solid @lightTextDivider;
+}
+
+.paperAnchorDocked_right {
+    border-left: 2rpx solid @lightTextDivider;
+}
+
+.paperAnchorDocked_bottom {
+    border-top: 2rpx solid @lightTextDivider;
+}
+  

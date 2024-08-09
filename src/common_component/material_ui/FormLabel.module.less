@@ -1,0 +1,28 @@
+@import './styles/index.less';
+
+.root {
+    .body1();
+    color: @lightTextSecondary;
+    line-height: 1.4375em;
+    padding: 0;
+}
+
+.root.focused.color_primary {
+    color: @primaryMain;
+}
+
+.root.focused.color_secondary {
+    color: @secondaryMain;
+}
+
+.root.disabled {
+    color: @lightTextDisabled;
+}
+
+.root.error {
+    color: @errorMain;
+}
+
+.asterisk.error {
+    color: @errorMain;
+}

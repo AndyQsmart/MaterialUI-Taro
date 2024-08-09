@@ -1,0 +1,41 @@
+@import './styles/index.less';
+.root {
+    border: none;
+    height: 2rpx;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: @lightTextDivider;
+};
+
+.absolute {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.inset {
+    margin-left: @unit * 9;
+}
+
+.light {
+    @the_red: red(@lightTextDivider);
+    @the_green: green(@lightTextDivider);
+    @the_blue: blue(@lightTextDivider);
+    background-color: rgba(@the_red, @the_green, @the_blue, 0.08);
+};
+
+.middle {
+    margin-left: @unit * 2;
+    margin-right: @unit * 2;
+}
+
+.vertical {
+    width: 2rpx;
+    height: 100%;
+}
+
+.flexItem {
+    height: auto;
+    align-self: stretch;
+}

@@ -1,0 +1,30 @@
+@import './styles/index.less';
+
+.root {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: inherit;
+    background-color: transparent; // Reset default value
+    // We disable the focus ring for mouse; touch and keyboard users.
+    outline: none;
+    border: none;
+    margin: 0; 
+    border-radius: 0;
+    padding: 0; // Remove the padding in Firefox
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    &::after { border: none; }
+}
+
+.root.disabled {
+    pointer-events: none;
+}
+
+.hidden_button {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    opacity: 0;
+}
