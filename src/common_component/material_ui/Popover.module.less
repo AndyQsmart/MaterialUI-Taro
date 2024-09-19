@@ -1,0 +1,18 @@
+.root {
+
+}
+
+/* Styles applied to the `Paper` component. */
+.paper {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // So we see the popover when it's empty.
+    // It's most likely on issue on userland.
+    min-width: 32rpx;
+    min-height: 32rpx;
+    max-width: calc(100% - 64rpx);
+    max-height: calc(100% - 64rpx);
+    // We disable the focus ring for mouse, touch and keyboard users.
+    outline: 0;
+}

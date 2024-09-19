@@ -1,0 +1,77 @@
+@import './styles/index.less';
+
+.root {
+    display: flex;
+    align-items: center;
+}
+
+.root.alternativeLabel {
+    flex-direction: column;
+}
+
+.root.disabled {
+    // cursor: default;
+}
+
+.horizontal {
+
+}
+
+.vertical {
+
+}
+
+.label {
+    color: @lightTextSecondary;
+}
+
+.label.active {
+    color: @lightTextPrimary;
+    font-weight: 500;
+}
+
+.label.completed {
+    color: @lightTextPrimary;
+    font-weight: 500;
+}
+
+.label.alternativeLabel {
+    margin-top: 32rpx;
+    text-align: center;
+}
+
+.label.error {
+    color: @errorMain;
+}
+
+.active {
+
+}
+
+.completed {
+
+}
+
+.error {
+
+}
+
+.disabled {
+
+}
+
+.iconContainer {
+    display: flex;
+    flex-shrink: 0;
+    padding-right: 16rpx;
+}
+
+.iconContainer.alternativeLabel {
+    padding-right: 0;
+}
+
+.labelContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

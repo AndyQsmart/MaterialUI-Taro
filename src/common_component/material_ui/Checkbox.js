@@ -8,7 +8,7 @@ class Checkbox extends PureComponent {
     static defaultProps = {
         className: '',
         color: 'secondary',
-        checked: false,
+        // checked: false,
         disabled: false,
         size: 'medium',
     }
@@ -44,6 +44,9 @@ class Checkbox extends PureComponent {
         }
         if (onChange) {
             onChange({
+                target: {
+                    checked: !checked,
+                },
                 detail: {
                     checked: !checked,
                 }

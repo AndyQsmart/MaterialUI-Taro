@@ -1,7 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
+import Taro from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import Backdrop from './Backdrop'
+import Portal from './Portal'
 import styles from './Modal.module.less'
-import { View } from '@tarojs/components';
-import Backdrop from './Backdrop';
 
 // 网页版原版
 class Modal extends PureComponent {
@@ -12,9 +14,11 @@ class Modal extends PureComponent {
         BackdropProps: {},
         // closeAfterTransition: false,
         disableBackdropClick: false,
+        disablePortal: false,
         hideBackdrop: false,
         // keepMounted: false,
         // onBackdropClick
+        unrenderAfterExit: false, // 单独为placeholder不隐藏问题修复
     }
 
     constructor() {
@@ -22,6 +26,7 @@ class Modal extends PureComponent {
 
         this.state = {
             exited: true,
+            root_node: null,
         }
 
         this.onEnter = this.onEnter.bind(this)
@@ -51,26 +56,53 @@ class Modal extends PureComponent {
         })
     }
 
+    componentDidMount() {
+        let _instance = Taro.getCurrentInstance()
+        let root_node = document.getElementById(_instance.page.$taroPath)
+
+        if (root_node) {
+            this.setState({
+                root_node,
+            })
+        }
+        else {
+            const onReadyEventId = _instance.router.onReady
+            Taro.eventCenter.once(onReadyEventId, () => {
+                console.log('onReady')
+                root_node = document.getElementById(_instance.page.$taroPath)
+                this.setState({
+                    root_node,
+                })
+            })
+        }
+    }
+
     render() {
-        const { className, style, children, open, BackdropComponent, BackdropProps, disableBackdropClick, hideBackdrop } = this.props
-        const { exited } = this.state
+        const { className, style, children, open, BackdropComponent, BackdropProps, disableBackdropClick, disablePortal, hideBackdrop, unrenderAfterExit } = this.props
+        const { exited, root_node } = this.state
+
+        if (!root_node) {
+            return null
+        }
 
         return (
-            <View
-                class={`${styles.root} ${!open && exited ? styles.exited : ''} ${className}`}
-                style={style}
-            >
-                <BackdropComponent
-                    invisible={hideBackdrop} 
-                    open={open}
-                    onClick={disableBackdropClick ? null : this.onBackdropClick}
-                    onEnter={this.onEnter}
-                    onExited={this.onExited}
-                    {...BackdropProps}
+            <Portal disablePortal={disablePortal} >
+                <View
+                    className={`${styles.root} ${!open && exited ? styles.exited : ''} ${unrenderAfterExit ? styles.unrenderAfterExit : ''} ${className}`}
+                    style={style}
                 >
-                </BackdropComponent>
-                {children}
-            </View>
+                    <BackdropComponent
+                        invisible={hideBackdrop} 
+                        open={open}
+                        onClick={disableBackdropClick ? null : this.onBackdropClick}
+                        onEnter={this.onEnter}
+                        onExited={this.onExited}
+                        {...BackdropProps}
+                    >
+                    </BackdropComponent>
+                    {children}
+                </View>
+            </Portal>
         )
     }
 }

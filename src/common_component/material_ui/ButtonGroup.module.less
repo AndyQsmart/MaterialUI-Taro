@@ -1,0 +1,115 @@
+@import './styles/index.less';
+
+.root {
+    display: inline-flex;
+    flex-direction: row;
+    border-radius: @borderRadius;
+}
+
+.contained {
+    .m-ui__shadow2();
+}
+
+.disableElevation {
+    box-shadow: none;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.grouped {
+    min-width: 80rpx;
+}
+
+.grouped_horizontal:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.grouped_horizontal:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.grouped_vertical:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.grouped_vertical:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.grouped_text_horizontal:not(:last-child) {
+    border-right: 2rpx solid rgba(0, 0, 0, 0.23);
+}
+
+.grouped_text_vertical:not(:last-child) {
+    border-bottom: 2rpx solid rgba(0, 0, 0, 0.23);
+}
+
+.grouped_text_primary:not(:last-child) {
+    border-color: rgba(@primaryMain, 0.5);
+}
+
+.grouped_text_secondary:not(:last-child) {
+    border-color: rgba(@secondaryMain, 0.5);
+}
+
+.grouped_outlined_horizontal:not(:first-child) {
+    margin-left: -2rpx;
+}
+
+.grouped_outlined_horizontal:not(:last-child) {
+    border-right-color: transparent;
+}
+
+.grouped_outlined_vertical:not(:first-child) {
+    margin-top: -2rpx;
+}
+
+.grouped_outlined_vertical:not(:last-child) {
+    border-bottom-color: transparent;
+}
+
+// .groupedOutlinedPrimary:hover {
+//     border-color: @primaryMain;
+// }
+
+// .groupedOutlinedSecondary:hover {
+//     border-color: @secondaryMain;
+// }
+
+.grouped_contained {
+    box-shadow: none;
+}
+
+.grouped_contained_horizontal:not(:last-child) {
+    border-right: 2rpx solid @grey400;
+}
+
+.grouped_contained_horizontal:not(:last-child).disabled {
+    border-right: 2rpx solid @lightActionDisabled;
+}
+
+.grouped_contained_vertical:not(:last-child) {
+    border-bottom: 2rpx solid @grey400;
+}
+
+.grouped_contained_vertical:not(:last-child).disabled {
+    border-bottom: 2rpx solid @lightActionDisabled;
+}
+
+.grouped_contained_primary:not(:last-child) {
+    border-color: @primaryMain;
+}
+
+.grouped_contained_secondary:not(:last-child) {
+    border-color: @secondaryMain;
+}

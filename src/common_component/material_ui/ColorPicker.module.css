@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 40rpx;
 }
 
@@ -36,7 +37,7 @@
 .color_silder {
     background: -webkit-linear-gradient(left, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
     width: 600rpx!important;
-    margin: 20rpx auto;
+    margin: 40rpx auto;
 }
 
 .color_input_area {
@@ -57,9 +58,23 @@
 }
 
 .func_area {
-    padding: 20rpx;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: stretch;
     border-top: 1rpx solid #dddddd;
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+}
+
+.func_spacing {
+    background-color: #dddddd;
+    width: 2rpx;
+    height: 68rpx;
+}
+
+.func_button {
+    flex-grow: 1;
+    padding: 20rpx 16rpx;
 }

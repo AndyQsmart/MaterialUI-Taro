@@ -35,7 +35,7 @@ class Accordion extends PureComponent {
         let other_child = []
         React.Children.map(children, (child)=>{
             if (child.type) {
-                if (child.type.name == 'AccordionSummary') {
+                if (child.type.muiName == 'AccordionSummary') {
                     AccordionSummary_child = child
                     AccordionSummary_child.props.expanded = expanded
                     AccordionSummary_child.props.disabled = disabled
@@ -43,10 +43,10 @@ class Accordion extends PureComponent {
                         AccordionSummary_child.props.onClick = this.onChange
                     }
                 }
-                else if (child.type.name == 'AccordionDetails') {
+                else if (child.type.muiName == 'AccordionDetails') {
                     AccordionDetails_child = child
                 }
-                else if (child.type.name == 'AccordionActions') {
+                else if (child.type.muiName == 'AccordionActions') {
                     AccordionActions_child = child
                 }
                 else {

@@ -4,12 +4,7 @@ import { View, Slider } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import TextField from './TextField'
 import Button from './Button'
-import Dialog from './Dialog'
-import Slide from './Slide'
-
-const TransitionUp = function(props) {
-    return <Slide direction="up" {...props} />;
-}
+import Drawer from './Drawer'
 
 const defaultColor = {
     r: 0, g: 0, b: 0, a: 0,
@@ -368,8 +363,8 @@ export default class ColorPicker extends PureComponent {
         const { percent_x, percent_y } = this.getCursorPercentPosition()
 
         return (
-            <Dialog open={open} onClose={onClose} TransitionComponent={TransitionUp} >
-                <View className={styles.container} >
+            <Drawer anchor='bottom' open={open} onClose={onClose} >
+                <View className={styles.container} catchMove={false} >
                     <View ref={this.pick_ref} className={styles.color_select_container}
                         style={{
                             backgroundColor: hue_color,
@@ -415,14 +410,15 @@ export default class ColorPicker extends PureComponent {
                     </View>
                 </View>
                 <View className={styles.func_area} >
-                    <Button variant='outlined'  onClick={this.confirmColor} >
+                    <Button className={styles.func_button} onClick={this.confirmColor} >
                         确定
                     </Button>
-                    <Button variant='outlined' onClick={onClose} >
+                    <View className={styles.func_spacing} ></View>
+                    <Button className={styles.func_button} onClick={onClose} >
                         取消
                     </Button>
                 </View>
-            </Dialog>
+            </Drawer>
         )
     }
 }

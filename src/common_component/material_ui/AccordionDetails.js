@@ -4,6 +4,8 @@ import { View } from '@tarojs/components';
 
 // 网页版原版
 class AccordionDetails extends PureComponent {
+    static muiName = 'AccordionDetails'
+
     static defaultProps = {
         className: '',
     }

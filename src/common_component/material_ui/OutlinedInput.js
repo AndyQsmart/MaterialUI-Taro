@@ -38,9 +38,17 @@ class OutlinedInput extends PureComponent {
             is_focus: false,
         }
 
+        this.inputRef = React.createRef()
+
         this.onFocus = this.onFocus.bind(this)
         this.onBlur = this.onBlur.bind(this)
         this.renderSuffix = this.renderSuffix.bind(this)
+    }
+
+    focus() {
+        if (this.inputRef.current) {
+            this.inputRef.current.focus()
+        }
     }
 
     onFocus() {
@@ -95,6 +103,7 @@ class OutlinedInput extends PureComponent {
 
         return (
             <InputBase
+                ref={this.inputRef}
                 className={`${styles.root} ${class_list.join(' ')} ${className}`}
                 style={style}
                 disabled={disabled}

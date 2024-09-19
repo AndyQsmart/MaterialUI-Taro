@@ -1,49 +1,266 @@
 @import './styles/index.less';
 
-@height: 64rpx;
 
 .root {
-    font-family: @fontFamily;
     position: relative;
+    font-family: @fontFamily;
     font-size: 26rpx;
-    height: @height;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 64rpx;
+    color: rgba(0, 0, 0, 0.87);
     background-color: @grey300;
+    border-radius: 32rpx;
     white-space: nowrap;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     outline: none;
     border: none;
     padding: 0;
-    border-radius: @height/2;
-    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms
-    // For correct alignment with the text.
 }
 
-.root-hover {
-    .m-ui__shadow1();
-    background: @grey400;
+.root.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-.avatar {
+.root.avatar {
+    margin-left: 10rpx;
+    margin-right: -12rpx;
+    width: 48rpx;
+    height: 48rpx;
+    color: @grey700;
+    font-size: 24rpx;
+}
+
+.root.avatar_color_primary {
+    color: @commonWhite;
+    background-color: @primaryDark; // rgb(17, 82, 147);
+}
+
+.root.avatar_color_secondary {
+    color: @commonWhite;
+    background-color: @secondaryDark; // rgb(154, 0, 54);
+}
+
+.root.avatar_small {
+    width: 36rpx;
+    height: 36rpx;
+    font-size: 20rpx;
+    margin-left: 8rpx;
     margin-right: -8rpx;
-    height: @height;
-    width: @height;
-    font-size: 32rpx;
+}
+
+.size_small {
+    height: 48rpx;
+    border-radius: 24rpx;
+}
+
+.color_primary {
+    color: @commonWhite;
+    background-color: @primaryMain; // #1976d2;
+}
+
+.color_secondary {
+    color: @commonWhite;
+    background-color: @secondaryMain; // rgb(220, 0, 78);
+}
+
+//   .MuiChip-clickable {
+//     cursor: pointer;
+//     user-select: none;
+//     -webkit-tap-highlight-color: transparent;
+//   }
+
+//   .MuiChip-clickable:hover, .MuiChip-clickable:focus {
+//     background-color: rgb(206, 206, 206);
+//   }
+
+//   .MuiChip-clickable:active {
+//     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+//   }
+
+//   .MuiChip-clickableColorPrimary:hover, .MuiChip-clickableColorPrimary:focus {
+//     background-color: rgb(43, 128, 213);
+//   }
+
+//   .MuiChip-clickableColorSecondary:hover, .MuiChip-clickableColorSecondary:focus {
+//     background-color: rgb(222, 20, 92);
+//   }
+
+//   .MuiChip-deletable:focus {
+//     background-color: rgb(206, 206, 206);
+//   }
+
+//   .MuiChip-deletableColorPrimary:focus {
+//     background-color: rgb(71, 145, 219);
+//   }
+
+//   .MuiChip-deletableColorSecondary:focus {
+//     background-color: rgb(227, 51, 113);
+//   }
+
+.outlined {
+    border: 2rpx solid rgba(0, 0, 0, 0.23);
+    background-color: transparent;
+}
+
+//   .MuiChip-clickable.MuiChip-outlined:hover, .MuiChip-clickable.MuiChip-outlined:focus, .MuiChip-deletable.MuiChip-outlined:focus {
+//     background-color: rgba(0, 0, 0, 0.04);
+//   }
+
+.outlined.avatar {
+    margin-left: 8rpx;
+}
+
+.outlined.avatar_small {
+    margin-left: 4rpx;
+}
+
+.outlined.icon {
+    margin-left: 8rpx;
+}
+
+.outlined.icon_small {
+    margin-left: 4rpx;
+}
+
+.outlined.deleteIcon {
+    margin-right: 10rpx;
+}
+
+.outlined.deleteIcon_small {
+    margin-right: 6rpx;
+}
+
+.outlined_primary {
+    color: @primaryMain;
+    border: 2rpx solid @primaryMain;
+}
+
+//   .MuiChip-clickable.MuiChip-outlinedPrimary:hover, .MuiChip-clickable.MuiChip-outlinedPrimary:focus, .MuiChip-deletable.MuiChip-outlinedPrimary:focus {
+//     background-color: rgba(25, 118, 210, 0.04);
+//   }
+
+.outlined_secondary {
+    color: @secondaryMain;
+    border: 2rpx solid @secondaryMain;
+}
+
+//   .MuiChip-clickable.MuiChip-outlinedSecondary:hover, .MuiChip-clickable.MuiChip-outlinedSecondary:focus, .MuiChip-deletable.MuiChip-outlinedSecondary:focus {
+//     background-color: rgba(220, 0, 78, 0.04);
+//   }
+
+.icon {
+    // color: #616161;
+    margin-left: 10rpx;
+    margin-right: -8rpx;
+}
+
+.icon_small {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 8rpx;
+    margin-right: -8rpx;
+}
+
+.icon_color_primary {
+    color: inherit;
+}
+
+.icon_color_secondary {
+    color: inherit;
 }
 
 .label {
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
     padding-left: 24rpx;
     padding-right: 24rpx;
-    user-select: none;
-    white-space: nowrap;
-    cursor: inherit; 
+    text-overflow: ellipsis;
 }
 
-.delete-icon {
-    color: fade(@lightTextPrimary, 26%);
-    height: auto;
-    margin: 0 8rpx 0 -16rpx;
+.label_small {
+    padding-left: 16rpx;
+    padding-right: 16rpx;
+}
+
+.deleteIcon {
+    color: rgba(@lightTextPrimary, 0.26); // rgba(0, 0, 0, 0.26);
+    width: 44rpx;
+    // cursor: pointer;
+    height: 44rpx;
+    margin: 0 10rpx 0 -12rpx;
+    // -webkit-tap-highlight-color: transparent;
+}
+
+//   .MuiChip-deleteIcon:hover {
+//     color: rgba(0, 0, 0, 0.4);
+//   }
+
+.deleteIcon_small {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: -8rpx;
+    margin-right: 8rpx;
+}
+
+.svg_delete_icon {
+    .svg_delete_icon_base(rgba(@lightTextPrimary, 0.26));
+}
+
+.deleteIcon_color_primary {
+    color: rgba(@commonWhite, 0.7);
+}
+
+.deleteIcon_color_primary.svg_delete_icon {
+    .svg_delete_icon_base(rgba(@commonWhite, 0.7));
+}
+
+//   .MuiChip-deleteIconColorPrimary:hover, .MuiChip-deleteIconColorPrimary:active {
+//     color: #fff;
+//   }
+
+.deleteIcon_color_secondary {
+    color: rgba(@commonWhite, 0.7);
+}
+
+.deleteIcon_color_secondary.svg_delete_icon {
+    .svg_delete_icon_base(rgba(@commonWhite, 0.7));
+}
+
+//   .MuiChip-deleteIconColorSecondary:hover, .MuiChip-deleteIconColorSecondary:active {
+//     color: #fff;
+//   }
+
+.deleteIcon_outlined_color_primary {
+    color: rgba(@primaryMain, 0.7); // rgba(25, 118, 210, 0.7);
+}
+
+.deleteIcon_outlined_color_primary.svg_delete_icon {
+    .svg_delete_icon_base(rgba(@primaryMain, 0.7)); 
+}
+
+//   .MuiChip-deleteIconOutlinedColorPrimary:hover, .MuiChip-deleteIconOutlinedColorPrimary:active {
+//     color: #1976d2;
+//   }
+
+.deleteIcon_outlined_color_secondary {
+    color: rgba(@secondaryMain, 0.7); // rgba(220, 0, 78, 0.7);
+}
+
+.deleteIcon_outlined_color_secondary.svg_delete_icon_base {
+    .svg_delete_icon_base(rgba(@secondaryMain, 0.7));
+}
+
+//   .MuiChip-deleteIconOutlinedColorSecondary:hover, .MuiChip-deleteIconOutlinedColorSecondary:active {
+//     color: rgb(220, 0, 78);
+//   }
+
+.svg_delete_icon_base(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    @the_alpha: alpha(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(@{the_red},@{the_green},@{the_blue},@{the_alpha})" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path></svg>');
 }

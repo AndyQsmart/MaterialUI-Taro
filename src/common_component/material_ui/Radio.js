@@ -7,8 +7,8 @@ import TouchRipple from './TouchRipple';
 class Radio extends PureComponent {
     static defaultProps = {
         className: '',
-        checked: false,
-        value: '',
+        // checked: false,
+        // value: '',
         color: 'secondary', // 'default' 'primary' 'secondary'
         disabled: false,
         size: 'medium', // 'medium' 'small'
@@ -46,6 +46,10 @@ class Radio extends PureComponent {
         }
         if (onChange) {
             onChange({
+                target: {
+                    value,
+                    checked: !checked,
+                },
                 detail: {
                     checked: !checked,
                     value,

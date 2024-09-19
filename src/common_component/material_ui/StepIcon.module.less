@@ -1,0 +1,79 @@
+@import './styles/index.less';
+
+.root {
+    color: @lightTextDisabled;
+    display: block;
+}
+
+.root.active {
+    color: @primaryMain;
+}
+
+.root.completed {
+    color: @primaryMain;
+}
+
+.root.error {
+    color: @errorMain,
+}
+
+.active {
+
+}
+
+.completed {
+
+}
+
+.error {
+
+}
+
+.warning_icon_svg(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(@{the_red},@{the_green},@{the_blue})" ><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>') }
+
+.warning_icon {
+    width: 48rpx;
+    height: 48rpx;
+    .warning_icon_svg(@lightTextDisabled);
+}
+
+.warning_icon.active {
+    .warning_icon_svg(@primaryMain);
+}
+
+.warning_icon.completed {
+    .warning_icon_svg(@primaryMain);
+}
+
+.warning_icon.error {
+    .warning_icon_svg(@errorMain);
+}
+
+.check_circle_icon_svg(@color) {
+    @the_red: red(@color);
+    @the_green: green(@color);
+    @the_blue: blue(@color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(@{the_red},@{the_green},@{the_blue})" ><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-2 17l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z"></path></svg>')
+}
+
+.check_circle_icon {
+    width: 48rpx;
+    height: 48rpx;
+    .check_circle_icon_svg(@lightTextDisabled);
+}
+
+.check_circle_icon.active {
+    .check_circle_icon_svg(@primaryMain);
+}
+
+.check_circle_icon.completed {
+    .check_circle_icon_svg(@primaryMain);
+}
+
+.check_circle_icon.error {
+    .check_circle_icon_svg(@errorMain);
+}

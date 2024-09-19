@@ -6,7 +6,7 @@ class CircularProgress extends PureComponent {
     static defaultProps = {
         className: '',
         color: 'primary',
-        size: 40,
+        size: 80,
     }
 
     render() {
@@ -16,12 +16,14 @@ class CircularProgress extends PureComponent {
             svg_class = styles['svg_color_'+color]
         }
 
+        let the_size = typeof size == 'number' ? `${size}rpx` : size
+
         return (
             <View className={`${styles.root} ${className}`} >
                 <View className={svg_class}
                     style={{
-                        width: size,
-                        height: size,
+                        width: the_size,
+                        height: the_size,
                     }}
                 >
                 </View>

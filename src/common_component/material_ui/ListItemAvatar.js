@@ -4,6 +4,8 @@ import { View } from '@tarojs/components';
 
 // 网页版原版
 class ListItemAvatar extends PureComponent {
+    static muiName = 'ListItemAvatar'
+
     static defaultProps = {
         className: '',
         // alignItems: 'center', // 'flex-start' 'center'

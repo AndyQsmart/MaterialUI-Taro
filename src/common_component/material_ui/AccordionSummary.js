@@ -5,6 +5,8 @@ import styles from './AccordionSummary.module.less'
 
 // 网页版原版
 class AccordionSummary extends PureComponent {
+    static muiName = 'AccordionSummary'
+    
     static defaultProps = {
         className: '',
         expandIcon: null,

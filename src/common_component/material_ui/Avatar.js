@@ -5,14 +5,17 @@ import { View, Block, Image } from '@tarojs/components';
 class Avatar extends PureComponent {
     static defaultProps = {
         className: '',
+        component: View,
         src: '',
     }
 
     render() {
-        const { className, style, children, src, onClick } = this.props
+        const { className, style, children, src, onClick, component } = this.props
+        
+        let Component = component
 
         return (
-            <View
+            <Component
                 className={`${styles.root} ${styles['color-default']} ${className}`}
                 style={style}
                 onClick={onClick}
@@ -29,7 +32,7 @@ class Avatar extends PureComponent {
                         null
                 }
                 {children}
-            </View>
+            </Component>
         )
     }
 }

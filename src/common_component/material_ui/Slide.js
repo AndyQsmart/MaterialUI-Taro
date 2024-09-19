@@ -20,6 +20,15 @@ class Slide extends PureComponent {
         this.state = {
             transition_style: {},
         }
+
+        this.system_info = null
+    }
+
+    getWindowSize() {
+        if (!this.system_info) {
+            this.system_info = Taro.getSystemInfoSync()
+        }
+        return this.system_info
     }
 
     onTransition(transition_style, callback) {
@@ -37,29 +46,31 @@ class Slide extends PureComponent {
             }
         }
 
+        let window_size = this.getWindowSize()
+
         switch (direction) {
             case 'left': {
                 return {
                     transition: transform_define,
-                    transform: 'translateX(500rpx)',
+                    transform: `translateX(${window_size.windowWidth}px)`,
                 }
             }
             case 'right': {
                 return {
                     transition: transform_define,
-                    transform: 'translateX(-500rpx)',
+                    transform: `translateX(-${window_size.windowWidth}px)`,
                 }
             }
             case 'up': {
                 return {
                     transition: transform_define,
-                    transform: 'translateY(1000rpx)',
+                    transform: `translateY(${window_size.windowHeight}px)`,
                 } 
             }
             default: {
                 return {
                     transition: transform_define,
-                    transform: 'translateY(-1000rpx)',
+                    transform: `translateY(-${window_size.windowHeight}px)`,
                 } 
             }
         }
@@ -81,14 +92,14 @@ class Slide extends PureComponent {
                     this.onTransition({
                         visibility: 'visible',
                         ...(this.getTransition(direction, timeout, true)),
+                    }, ()=>{
+                        setTimeout(()=>{
+                            // 动画结束
+                            if (onEntered) {
+                                onEntered()
+                            }
+                        }, timeout+10)
                     })
-                }, ()=>{
-                    setTimeout(()=>{
-                        // 动画结束
-                        if (onEntered) {
-                            onEntered()
-                        }
-                    }, timeout+10)
                 })
             })
         }
@@ -107,11 +118,9 @@ class Slide extends PureComponent {
                         visibility: 'hidden',
                         ...(this.getTransition(direction, timeout)),
                     }, ()=>{
-                        Taro.nextTick(()=>{
-                            if (onExited) {
-                                onExited()
-                            }
-                        })
+                        if (onExited) {
+                            onExited()
+                        }
                     })
                 }, timeout+10)
             })

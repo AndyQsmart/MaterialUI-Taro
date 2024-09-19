@@ -20,6 +20,9 @@ class RadioGroup extends PureComponent {
         const { onChange } = this.props
         if (onChange) {
             onChange({
+                target: {
+                    value: e.detail.value,
+                },
                 detail: {
                     value: e.detail.value,
                 }

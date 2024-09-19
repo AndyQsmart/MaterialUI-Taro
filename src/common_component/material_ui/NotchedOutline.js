@@ -12,7 +12,6 @@ class NotchedOutline extends PureComponent {
 
     constructor() {
         super(...arguments)
-
     }
 
     render() {

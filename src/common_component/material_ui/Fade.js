@@ -19,6 +19,15 @@ class Fade extends PureComponent {
         this.state = {
             transition_style: {},
         }
+
+        this.timer = null
+    }
+
+    doTimeout(func, duration) {
+        if (!this.timer) {
+            clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(func, duration)
     }
 
     onTransition(transition_style, callback) {
@@ -29,7 +38,7 @@ class Fade extends PureComponent {
 
     componentDidUpdate(prevProps) {
         const { onEnter, onEntered, onExit, onExited, timeout } = this.props
-        let transition_define = `opacity ${timeout}ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`
+        let transition_define = `opacity ${timeout}ms cubic-bezier(0.4, 0, 0.2, 1)`
 
         // 从关闭到开启
         if (!prevProps.in && this.props.in) {
@@ -48,14 +57,14 @@ class Fade extends PureComponent {
                         visibility: 'visible',
                         opacity: 1,
                         transition: transition_define,
+                    }, ()=>{
+                        this.doTimeout(()=>{
+                            // 动画结束
+                            if (onEntered) {
+                                onEntered()
+                            }
+                        }, timeout+10)
                     })
-                }, ()=>{
-                    setTimeout(()=>{
-                        // 动画结束
-                        if (onEntered) {
-                            onEntered()
-                        }
-                    }, timeout+10)
                 })
             })
         }
@@ -71,18 +80,15 @@ class Fade extends PureComponent {
                 opacity: 0.01,
                 transition: transition_define,
             }, ()=>{
-                setTimeout(()=>{
+                this.doTimeout(()=>{
+                    if (onExited) {
+                        onExited()
+                    }
                     // 动画结束，然后隐藏
                     this.onTransition({
                         visibility: 'hidden',
                         opacity: 0.01,
                         transition: transition_define,
-                    }, ()=>{
-                        Taro.nextTick(()=>{
-                            if (onExited) {
-                                onExited()
-                            }
-                        })
                     })
                 }, timeout+10)
             })

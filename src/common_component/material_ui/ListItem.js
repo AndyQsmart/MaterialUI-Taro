@@ -40,14 +40,14 @@ class ListItem extends PureComponent {
     }
 
     render() {
-        const { className, style, children, dense, disabled, disableGutters, divider, button, alignItems, onClick } = this.props
+        const { className, style, children, dense, selected, disabled, disableGutters, divider, button, alignItems, onClick } = this.props
 
         React.Children.map(children, (child)=>{
-            if (child.type) {
-                if (child.type.name == 'ListItemAvatar') {
+            if (child && child.type) {
+                if (child.type.muiName == 'ListItemAvatar') {
                     child.props.alignItems = alignItems
                 }
-                else if (child.type.name == 'ListItemIcon') {
+                else if (child.type.muiName == 'ListItemIcon') {
                     child.props.alignItems = alignItems
                 }
             }
@@ -55,7 +55,7 @@ class ListItem extends PureComponent {
 
         return (
             <View 
-                className={`${styles.root} ${!disableGutters ? styles.gutters : ''} ${disabled ? styles.disabled : ''} ${divider ? styles.divider : ''} ${dense ? styles.dense : ''} ${button ? styles.button_style : ''} ${styles['alignItems_'+alignItems]} ${className}`}
+                className={`${styles.root} ${!disableGutters ? styles.gutters : ''} ${selected ? styles.selected : ''} ${disabled ? styles.disabled : ''} ${divider ? styles.divider : ''} ${dense ? styles.dense : ''} ${button ? styles.button_style : ''} ${styles['alignItems_'+alignItems]} ${className}`}
                 style={style}
                 onClick={onClick}
                 onTouchStart={this.onTouchStart}

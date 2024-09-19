@@ -48,8 +48,16 @@ export default class TextField extends PureComponent {
             is_focus: false,
         }
 
+        this.inputRef = React.createRef()
+
         this.onFocus = this.onFocus.bind(this)
         this.onBlur = this.onBlur.bind(this)
+    }
+
+    focus() {
+        if (this.inputRef.current) {
+            this.inputRef.current.focus()
+        }
     }
 
     onFocus() {
@@ -122,7 +130,8 @@ export default class TextField extends PureComponent {
         }
 
         const InputElement = (
-            <Input
+            <InputComponent
+                ref={this.inputRef}
                 fullWidth={fullWidth}
                 multiline={multiline}
                 rows={rows}

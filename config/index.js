@@ -45,6 +45,10 @@ const config = {
         imageUrlLoaderOption: {
             limit: 1, // 关闭图片转base64，防止分享图片问题
         },
+        miniCssExtractPluginOption: {
+            //忽略css文件引入顺序
+            ignoreOrder: true,
+        },
         // addChunkPages(pages) {
         //     // pages.set('subpackages/bar/index', ['subpackages/common']),
         //     // pages.set('subpackages/foo/index', ['subpackages/common'])

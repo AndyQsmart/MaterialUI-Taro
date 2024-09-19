@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
-import styles from './InputBase.module.less'
+import Taro from '@tarojs/taro'
 import { View, Textarea, Input } from '@tarojs/components';
+import styles from './InputBase.module.less'
 
 // 网页版原版
 class InputBase extends PureComponent {
@@ -34,8 +35,21 @@ class InputBase extends PureComponent {
             is_focus: false,
         }
 
+        this.inputRef = React.createRef()
+
         this.onFocus = this.onFocus.bind(this)
         this.onBlur = this.onBlur.bind(this)
+    }
+
+    focus() {
+        if (this.inputRef.current) {
+            let the_uid = this.inputRef.current.uid
+            Taro.createSelectorQuery().select(`#${the_uid}`).context(res => {
+                this.setState({
+                    is_focus: true,
+                })
+            }).exec()
+        }
     }
 
     onFocus() {
@@ -78,6 +92,7 @@ class InputBase extends PureComponent {
             }
             return (
                 <Textarea
+                    ref={this.inputRef}
                     {...textarea_props}
                     {...inputProps}
                     style={new_style}
@@ -87,6 +102,7 @@ class InputBase extends PureComponent {
         else {
             return (
                 <Input
+                    ref={this.inputRef}
                     {...inputProps}
                 />
             )
@@ -127,6 +143,7 @@ class InputBase extends PureComponent {
             placeholder,
             className: `${styles.input} ${input_class_list.join(' ')} ${inputPropsClass}`,
             onInput: onChange,
+            focus: is_focus,
             ...others,
             ...inputPropsOthers,
         }

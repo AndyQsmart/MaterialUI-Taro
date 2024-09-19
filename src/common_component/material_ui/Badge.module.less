@@ -1,35 +1,31 @@
 @import './styles/index.less';
 
-@RADIUS: 24rpx;
+@RADIUS: 20rpx;
+@RADIUS_DOT: 8rpx;
 
 .root {
     position: relative;
     display: inline-flex;
+    flex-shrink: 0;
     // For correct alignment with the text.
     vertical-align: middle;
 }
 
-.anchorOriginTopRightRectangle {
-    top: 0;
-    right: 0;
-    transform: scale(1) translate(50%, -50%);
-    transform-origin: 100% 0%;
-}
-
 .badge {
-    height: @RADIUS * 2;
+    height: (@RADIUS * 2);
     display: flex;
     padding: 0rpx 12rpx;
     z-index: 1; // Render the badge on top of potential ripples.
     position: absolute;
     flex-wrap: wrap;
-    font-size: @RADIUS;
-    min-width: @RADIUS*2;
+    font-size: 24rpx;
+    min-width: (@RADIUS * 2);
     box-sizing: border-box;
     transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     align-items: center;
     font-family: @fontFamily;
-    font-weight: @fontWeightLight;
+    font-weight: @fontWeightMedium;
+    line-height: 1;
     align-content: center;
     // border-radius: 50%;
     border-radius: @RADIUS;
@@ -37,10 +33,10 @@
     justify-content: center;
 }
 
-.color-default {
-    background-color: @commonWhite;
-    color: @lightTextPrimary;
-}
+// .color-default {
+//     background-color: @commonWhite;
+//     color: @lightTextPrimary;
+// }
 
 .color-primary {
     background-Color: @primaryMain;
@@ -55,4 +51,191 @@
 .color-error {
     background-color: @errorMain;
     color: @commonWhite;
-};
+}
+
+.dot {
+    height: (@RADIUS_DOT * 2);
+    padding: 0;
+    min-width: (@RADIUS_DOT * 2);
+    border-radius: @RADIUS_DOT;
+}
+
+.anchorOrigin-top-right-rectangle {
+    top: 0;
+    right: 0;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0%;
+}
+
+.anchorOrigin-top-right-rectangle.invisible {
+    transform: scale(0) translate(50%, -50%);
+}
+
+.anchorOrigin-top-right-rectangular {
+    top: 0;
+    right: 0;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0%;
+}
+
+.anchorOrigin-top-right-rectangular.invisible {
+    transform: scale(0) translate(50%, -50%);
+}
+
+.anchorOrigin-bottom-right-rectangle {
+    right: 0;
+    bottom: 0;
+    transform: scale(1) translate(50%, 50%);
+    transform-origin: 100% 100%;
+}
+
+.anchorOrigin-bottom-right-rectangle.invisible {
+    transform: scale(0) translate(50%, 50%);
+}
+
+.anchorOrigin-bottom-right-rectangular {
+    right: 0;
+    bottom: 0;
+    transform: scale(1) translate(50%, 50%);
+    transform-origin: 100% 100%;
+}
+
+.anchorOrigin-bottom-right-rectangular.invisible {
+    transform: scale(0) translate(50%, 50%);
+}
+
+.anchorOrigin-top-left-rectangle {
+    top: 0;
+    left: 0;
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0% 0%;
+}
+
+.anchorOrigin-top-left-rectangle.invisible {
+    transform: scale(0) translate(-50%, -50%);
+}
+
+.anchorOrigin-top-left-rectangular {
+    top: 0;
+    left: 0;
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0% 0%;
+}
+
+.anchorOrigin-top-left-rectangular.invisible {
+    transform: scale(0) translate(-50%, -50%);
+}
+
+.anchorOrigin-bottom-left-rectangle {
+    left: 0;
+    bottom: 0;
+    transform: scale(1) translate(-50%, 50%);
+    transform-origin: 0% 100%;
+}
+
+.anchorOrigin-bottom-left-rectangle.invisible {
+    transform: scale(0) translate(-50%, 50%);
+}
+
+.anchorOrigin-bottom-left-rectangular {
+    left: 0;
+    bottom: 0;
+    transform: scale(1) translate(-50%, 50%);
+    transform-origin: 0% 100%;
+}
+
+.anchorOrigin-bottom-left-rectangular.invisible {
+    transform: scale(0) translate(-50%, 50%);
+}
+
+.anchorOrigin-top-right-circle {
+    top: 14%;
+    right: 14%;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0%;
+}
+
+.anchorOrigin-top-right-circle.invisible {
+    transform: scale(0) translate(50%, -50%);
+}
+
+.anchorOrigin-top-right-circular {
+    top: 14%;
+    right: 14%;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0%;
+}
+
+.anchorOrigin-top-right-circular.invisible {
+    transform: scale(0) translate(50%, -50%);
+}
+
+.anchorOrigin-bottom-right-circle {
+    right: 14%;
+    bottom: 14%;
+    transform: scale(1) translate(50%, 50%);
+    transform-origin: 100% 100%;
+}
+
+.anchorOrigin-bottom-right-circle.MuiBadge-invisible {
+    transform: scale(0) translate(50%, 50%);
+}
+
+.anchorOrigin-bottom-right-circular {
+    right: 14%;
+    bottom: 14%;
+    transform: scale(1) translate(50%, 50%);
+    transform-origin: 100% 100%;
+}
+
+.anchorOrigin-bottom-right-circular.invisible {
+    transform: scale(0) translate(50%, 50%);
+}
+
+.anchorOrigin-top-left-circle {
+    top: 14%;
+    left: 14%;
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0% 0%;
+}
+
+.anchorOrigin-top-left-circle.invisible {
+    transform: scale(0) translate(-50%, -50%);
+}
+
+.anchorOrigin-top-left-circular {
+    top: 14%;
+    left: 14%;
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0% 0%;
+}
+
+.anchorOrigin-top-left-circular.invisible {
+    transform: scale(0) translate(-50%, -50%);
+}
+
+.anchorOrigin-bottom-left-circle {
+    left: 14%;
+    bottom: 14%;
+    transform: scale(1) translate(-50%, 50%);
+    transform-origin: 0% 100%;
+}
+
+.anchorOrigin-bottom-left-circle.invisible {
+    transform: scale(0) translate(-50%, 50%);
+}
+
+.anchorOrigin-bottom-left-circular {
+    left: 14%;
+    bottom: 14%;
+    transform: scale(1) translate(-50%, 50%);
+    transform-origin: 0% 100%;
+}
+
+.anchorOrigin-bottom-left-circular.invisible {
+    transform: scale(0) translate(-50%, 50%);
+}
+
+.invisible {
+    transition: transform 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}

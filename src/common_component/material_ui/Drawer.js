@@ -48,6 +48,9 @@ class Drawer extends PureComponent {
         else {
             if (styles['paperAnchorDocked_'+anchor]) paper_class_list.push(styles['paperAnchorDocked_'+anchor])
         }
+        if (PaperProps.className) {
+            paper_class_list.push(PaperProps.className)
+        }
 
         const drawer = (
             <Paper
@@ -95,7 +98,7 @@ class Drawer extends PureComponent {
                 </View>
             );
         }
-        
+
         // variant === temporary
         return (
             <Modal

@@ -41,6 +41,7 @@ class Button extends PureComponent {
             <ButtonBase
                 disabled={disabled}
                 className={`${styles.root} ${class_list.join(' ')} ${className}`}
+                style={style}
                 {...others}
                 onClick={onClick}
             >

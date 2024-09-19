@@ -7,12 +7,12 @@ import Typography from './Typography'
 class FormControlLabel extends PureComponent {
     static defaultProps = {
         className: '',
-        checked: false,
+        // checked: false,
         control: null,
         disabled: false,
         label: '',
         labelPlacement: 'end', // 'bottom' 'end' 'start' 'top'
-        value: '',
+        // value: '',
     }
 
     constructor() {
@@ -22,32 +22,63 @@ class FormControlLabel extends PureComponent {
     }
 
     onChange() {
-        const { disabled, checked, value, onChange } = this.props
+        let { disabled, checked, control, value, onChange } = this.props
 
         if (disabled) {
             return
         }
 
+        if (typeof checked === 'undefined') {
+            checked = control.props.checked
+        }
+
         if (onChange) {
             onChange({
+                target: {
+                    value,
+                    checked: !checked,
+                },
                 detail: {
                     value,
                     checked: !checked,
                 }
             })
         }
+        else {
+            if (control.props.onChange) {
+                control.props.onChange({
+                    target: {
+                        value,
+                        checked: !checked,
+                    },
+                    detail: {
+                        value,
+                        checked: !checked,
+                    }
+                })
+            }
+        }
     }
 
     render() {
         const { className, style, checked, control, disabled, label, labelPlacement, value, onChange } = this.props
 
-        control.props.checked = checked
-        control.props.value = value
-        control.props.disabled = disabled
+        let controlProps = {
+            disabled,
+            onChange: null,
+        }
+
+        let prop_list = ['checked', 'value']
+        for (let i = 0; i < prop_list.length; i++) {
+            let key = prop_list[i]
+            if (typeof control.props[key] === 'undefined' && typeof this.props[key] !== 'undefined') {
+                controlProps[key] = this.props[key]
+            }
+        }
 
         return (
             <View className={`${styles.root} ${disabled ? styles.disabled : ''} ${styles['label_placement_'+labelPlacement]} ${className}`} style={style} onClick={this.onChange} >
-                {control}
+                {React.cloneElement(control, controlProps)}
                 <Typography variant='body1' >
                     {label}
                 </Typography>

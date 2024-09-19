@@ -29,6 +29,9 @@ class Select extends PureComponent {
         const { value } = e.detail
         if (onChange) {
             onChange({
+                target: {
+                    value: select_list[value].value,
+                },
                 detail: {
                     value: select_list[value].value,
                 }

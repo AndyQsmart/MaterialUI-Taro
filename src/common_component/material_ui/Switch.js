@@ -25,6 +25,9 @@ class Switch extends PureComponent {
         }
         if (onChange) {
             onChange({
+                target: {
+                    checked: !checked,
+                },
                 detail: {
                     checked: !checked,
                 }
