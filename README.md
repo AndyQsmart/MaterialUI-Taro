@@ -12,6 +12,8 @@ import "./common_component/material_ui"
 ```
 In this case,I place "material_ui" in folder "common_component".You can move the "material_ui" to anywhere you want.
 
+Version: node v16.20.0; npm 8.19.4
+
 # Example
 You can run the example project.It is an example that show some usage of components.
 
