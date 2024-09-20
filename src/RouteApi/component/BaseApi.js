@@ -156,7 +156,7 @@ class BaseApi extends Component {
                                 this.demos_list.map((item, index)=>{
                                     return (
                                         <ListItem key={index} >
-                                            · <Button color='secondary' onClick={this.goUrl(item.url)} >{item.name}</Button>
+                                            · <Button className={styles.demo_button} color='secondary' onClick={this.goUrl(item.url)} >{item.name}</Button>
                                         </ListItem>
                                     )
                                 })

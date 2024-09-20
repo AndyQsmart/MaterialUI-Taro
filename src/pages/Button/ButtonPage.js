@@ -1,14 +1,30 @@
 import React, { Component }  from 'react'
 import Taro from '@tarojs/taro'
 import { View, ScrollView } from '@tarojs/components'
+import BasePageComponent from '../../instance_component/BasePageComponent/BasePageComponent'
 import Typography from '../../common_component/material_ui/Typography'
 import Button from '../../common_component/material_ui/Button'
 import LeftBar from '../../instance_component/LeftBar/LeftBar'
+import List from '../../common_component/material_ui/List'
+import ListItem from '../../common_component/material_ui/ListItem'
 import './ButtonPage.scss'
 
-class ButtonPage extends Component {
+class ButtonPage extends BasePageComponent {
     constructor() {
         super(...arguments)
+
+        this.api_list = [
+            {
+                name: '<Button />',
+                url: '/RouteApi/pages/ButtonApi/ButtonApi',
+            },
+            {
+                name: '<ButtonBase />',
+            },
+            {
+                name: '<IconButton />',
+            },
+        ]
     }
 
     render() {
@@ -199,6 +215,13 @@ class ButtonPage extends Component {
                                 </Typography>
                             </View>
                         </ScrollView>
+
+
+
+                        {/* 中间还有内容 */}
+
+                        <View className='spacing_big' ></View>
+                        {this.renderApi()}
                     </View>
                 </ScrollView>
             </View>
