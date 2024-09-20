@@ -1,27 +1,15 @@
 import React, { Component }  from 'react'
 import Taro from '@tarojs/taro'
-import './ButtonPage.scss'
-import { View, ScrollView, Image } from '@tarojs/components'
-// import TextField from '../../common_component/material_ui/TextField'
-// import Divider from '.../../common_component/material_ui/Divider'
+import { View, ScrollView } from '@tarojs/components'
 import Typography from '../../common_component/material_ui/Typography'
 import Button from '../../common_component/material_ui/Button'
 import LeftBar from '../../instance_component/LeftBar/LeftBar'
+import './ButtonPage.scss'
 
 class ButtonPage extends Component {
     constructor() {
         super(...arguments)
     }
-
-    componentDidMount() {
-    }
-
-    componentWillUnmount() { }
-
-    componentDidShow() {
-    }
-
-    componentDidHide() { }
 
     render() {
         return (

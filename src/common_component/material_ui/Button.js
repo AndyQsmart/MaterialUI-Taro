@@ -12,7 +12,6 @@ class Button extends PureComponent {
         fullWidth: false,
         disableRipple: false,
         disableElevation: false,
-        mini: false,
         variant: 'text', // contained、outlined、text、default: text
     }
 

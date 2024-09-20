@@ -20,12 +20,64 @@
     // overflow: auto;
 }
 
-.component_area {
-    padding: 20rpx 0rpx 0rpx 20rpx;
+.props_area {
     border-radius: 10rpx;
     border: 2rpx solid #dddddd;
-    flex-wrap: wrap;
     margin-bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.props_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.props_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.props_head {
+    width: 20rpx;
+    flex-grow: 1;
+    padding: 20rpx 0rpx 20rpx 20rpx;
+    font-weight: bold;
+}
+
+.props_head_last {
+    width: 20rpx;
+    flex-grow: 1;
+    width: 20rpx;
+    flex-grow: 1;
+    padding: 20rpx;
+    font-weight: bold;
+}
+
+.props_head_bottom {
+    padding: 0rpx 20rpx 20rpx 20rpx;
+    font-weight: bold;
+}
+
+.props_prop {
+    width: 20rpx;
+    flex-grow: 1;
+    padding: 20rpx 0rpx 20rpx 20rpx;
+    font-size: 28rpx;
+}
+
+.props_prop_last {
+    width: 20rpx;
+    flex-grow: 1;
+    width: 20rpx;
+    flex-grow: 1;
+    padding: 20rpx;
+    font-size: 28rpx;
+}
+
+.props_prop_bottom {
+    padding: 0rpx 20rpx 20rpx 20rpx;
+    font-size: 28rpx;
 }
 
 .code_container {

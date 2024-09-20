@@ -1,3 +1,3 @@
 export default {
-    // navigationStyle: 'custom',
+    navigationBarTitleText: 'Button 按钮',
 }

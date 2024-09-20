@@ -3,15 +3,14 @@ export default {
         'pages/index/index',
         'pages/Button/ButtonPage',
     ],
-    // subPackages: [
-    //     {
-    //         root: 'RoutePosition',
-    //         pages: [
-    //             'pages/CustomerRegisterPage/CustomerRegisterPage',
-    //             'pages/PositionInfoPage/PositionInfoPage',
-    //         ]
-    //     },
-    // ],
+    subPackages: [
+        {
+            root: 'RouteApi',
+            pages: [
+                'pages/ButtonApi/ButtonApi',
+            ]
+        },
+    ],
     window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
